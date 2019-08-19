@@ -1,0 +1,129 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Oswald', sans-serif;
+    overflow-x: hidden;
+}
+
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+nav {
+    background-color: #000;
+    height: 10vh;
+}
+
+header {
+    background-color: rgb(42, 109, 253);
+    height: 70vh;
+    margin-bottom: 50px;
+}
+
+.title {
+    text-align: center;
+    margin: 50px 0;
+    font-size: 1.5rem;
+}
+
+section {
+    margin-bottom: 30px;
+    transition: 1s linear;
+}
+
+section h2 {
+
+    padding: 20px 0 20px 80px;
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: normal;
+    color: white;
+    background-color: rgb(42, 109, 253);
+    margin-bottom: 20px;
+}
+
+section img {
+    float: left;
+    margin-left: 30px;
+}
+
+section p {
+    float: left;
+    width: calc(100% - 286px);
+    font-size: 22px;
+    padding: 30px 50px 30px 30px;
+    color: rgb(31, 31, 31);
+    line-height: 150%;
+
+}
+
+section.knowledge,
+section.growth{
+    transform: translateX(-100vw);
+}
+
+section.perfection{
+    transform: translateX(100vw);
+}
+
+
+section.knowledge.active,
+section.perfection.active, section.growth.active {
+    transform: translateX(0);
+}
+
+
+article {
+    text-align: center;
+    transition: 1s linear;
+}
+
+article h1 {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 40px;
+    margin-top: 100px;
+}
+
+article img {
+    width: 90%;
+}
+
+
+article p {
+    color: rgb(42, 109, 253);
+    font-size: 1.3rem;
+    margin: 0 80px 40px;
+}
+
+article p span {
+    color: rgb(31, 31, 31);
+}
+
+.article1,
+.article2{ 
+    transform: scale(0);
+    opacity: 0;
+}
+
+.article1.active,
+.article2.active{ 
+    transform: scale(1);
+    opacity:1;
+}
+
+
+footer {
+    font-size: 20px;
+    padding: 15px;
+    background-color: #000;
+    color: white;
+    text-align: center;
+    margin-top: 80px;
+}
