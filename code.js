@@ -1,5 +1,4 @@
-
-$(window).on('scroll', function(){
+$(window).on('scroll', function () {
 
     const scrollPosition = $(this).scrollTop();
     // console.log(scrollPosition);
@@ -7,58 +6,62 @@ $(window).on('scroll', function(){
     // console.log(windowHeight);
 
     const $knowledge = $('.knowledge');
-    const knowledgeFromTop = $knowledge.offset().top ;
+    const knowledgeFromTop = $knowledge.offset().top;
     // console.log (knowledgeFromTop);
     const knowledgeHeight = $knowledge.outerHeight();
     // console.log(knowledgeHeight);
 
     const $perfection = $('.perfection');
-    const perfectionFromTop = $perfection.offset().top ;
+    const perfectionFromTop = $perfection.offset().top;
     // console.log (perfectionFromTop);
     const perfectionHeight = $perfection.outerHeight();
-    console.log(knowledgeHeight);
-    
+    // console.log(knowledgeHeight);
+
     const $growth = $('.growth');
-    const growthFromTop = $growth.offset().top ;
+    const growthFromTop = $growth.offset().top;
     const growthHeight = $growth.outerHeight();
 
     const $article1 = $('.article1');
-    const article1FromTop = $article1.offset().top ;
+    const article1FromTop = $article1.offset().top;
     const articleHeight = $article1.outerHeight();
-  
 
-    if(scrollPosition > knowledgeFromTop + knowledgeHeight - windowHeight )
-    {
+    const $header = $('header');
+    const headerTop = $header.offset().top;
+    const headerHeight = $header.outerHeight();
+
+     console.log(headerTop);
+
+    $header.css({
+        'opacity': 1- scrollPosition/(headerHeight+headerTop)
+    })
+
+
+    if (scrollPosition > knowledgeFromTop + knowledgeHeight - windowHeight) {
         $('.knowledge').addClass('active')
 
     }
-    
 
-    if(scrollPosition > perfectionFromTop + perfectionHeight - windowHeight )
-    {
+
+    if (scrollPosition > perfectionFromTop + perfectionHeight - windowHeight) {
         $('.perfection').addClass('active')
 
     }
-    
-    if(scrollPosition > growthFromTop + growthHeight - windowHeight )
-    {
+
+    if (scrollPosition > growthFromTop + growthHeight - windowHeight) {
         $('.growth').addClass('active')
 
     }
-   
 
-    if(scrollPosition > growthFromTop  )
-    {
+
+    if (scrollPosition > growthFromTop) {
         $('.article1').addClass('active')
 
     }
-    if(scrollPosition > article1FromTop + (articleHeight / 2) )
-    {
+    if (scrollPosition > article1FromTop + (articleHeight / 2)) {
         $('.article2').addClass('active')
 
     }
-    if(scrollPosition < 400 )
-    {
+    if (scrollPosition < 400) {
         $('*').removeClass('active')
 
     }

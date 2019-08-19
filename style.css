@@ -24,8 +24,11 @@ header {
     background-color: rgb(42, 109, 253);
     height: 70vh;
     margin-bottom: 50px;
+    overflow: hidden;
+    background-image: url(img/header.jpg);
+    background-size: cover;
+    background-position: center;
 }
-
 .title {
     text-align: center;
     margin: 50px 0;
