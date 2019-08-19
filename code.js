@@ -32,7 +32,8 @@ $(window).on('scroll', function () {
      console.log(headerTop);
 
     $header.css({
-        'opacity': 1- scrollPosition/(headerHeight+headerTop)
+        'opacity': 1- scrollPosition/(headerHeight+headerTop),
+        'filter' : 'grayscale('+ (scrollPosition/(headerHeight+headerTop))+')'
     })
 
 
